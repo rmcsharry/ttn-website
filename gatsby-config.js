@@ -18,7 +18,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'The Thorium Network website',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
