@@ -1,13 +1,17 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "The Thorium Network",
+  "description": "The public website for The Thorium Network blockchain project",
   "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
+    "blockchain",
+    "thorium",
+    "nucler energy",
+    "nulcer power",
+    "thorium fule",
+    "thorium reactor",
+    "thorium salt reactor",
+    "molten salt reactor"
   ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
+  "repository": "https://github.com/ttn-website",
   "success_url": "/",
   "buildpacks": [
     {
