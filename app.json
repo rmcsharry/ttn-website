@@ -11,7 +11,7 @@
     "thorium salt reactor",
     "molten salt reactor"
   ],
-  "repository": "https://github.com/ttn-website",
+  "repository": "https://github.com/rmcsharry/ttn-website",
   "success_url": "/",
   "buildpacks": [
     {
