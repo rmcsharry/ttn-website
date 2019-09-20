@@ -1,0 +1,95 @@
+@charset "utf-8";
+// @import "./debug.css";
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/avenir-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+body {
+  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// set bulma variables here before importing Bulma
+// Set your brand colors
+$orange: hsl(35, 100%, 50%);
+$wheat: #f5deb3;
+
+$dark: #65440f;
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+
+$primary: $orange;
+$link: $orange;
+$link-hover: white;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+$family-sans-serif: "Nunito", sans-serif;
+$body-background-color: black;
+
+$navbar-item-color: $primary;
+$navbar-item-hover-color: $wheat;
+$navbar-tab-hover-border-bottom-color: $wheat;
+$navbar-burger-color: $primary;
+
+$button-color: $dark;
+$button-text-color: $dark;
+$button-focus-border-color: white;
+
+$button-background-color: $primary;
+$button-hover-color: $wheat;
+$button-border-width: 1px;
+$button-border-color: $primary;
+$button-hover-border-color:  hsl(35,100,50);
+$button-focus-border-color: $wheat;
+
+@import "~bulma/bulma.sass";
+@import "./helpers.scss";
+
+.button.is-primary {
+  color: $dark;
+}
+
+.button.is-small {
+  border-radius: 0;
+}
+.logo {
+  height: 64px;
+  width: 64px;
+}
+.brandname {
+  padding: 8px;
+  font-size: 1rem;
+  line-height: 1;
+  color: $wheat;
+  .column {
+    padding: 0;
+  }
+}
+.navbar {
+  max-width: 1180px;
+  &.is-fixed-top {
+    margin: auto;
+  }
+}
+.navbar-brand {
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+.force-navbar-center {
+  flex-grow: 1; justify-content: center;
+}
+
+// c97400 - on hover
+
+// background: #d2c4a8;
+// border: 1px solid black;
+// color: #8c7a33;
+// font-weight: 700;
