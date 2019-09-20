@@ -19,14 +19,15 @@ body {
 // set bulma variables here before importing Bulma
 // Set your brand colors
 $orange: hsl(35, 100%, 50%);
-$secondary: #f5deb3;
+$tnn-primary: hsl(203, 89%, 53%);
+$tnn-secondary: #f5deb3;
 
 
 $dark: #65440f;
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
 
-$primary: $orange;
+$primary: $tnn-primary;
 $link: $orange;
 $link-hover: white;
 $widescreen-enabled: false;
@@ -36,8 +37,8 @@ $family-sans-serif: "Nunito", sans-serif;
 $body-background-color: black;
 
 $navbar-item-color: $primary;
-$navbar-item-hover-color: $secondary;
-$navbar-tab-hover-border-bottom-color: $secondary;
+$navbar-item-hover-color: $tnn-secondary;
+$navbar-tab-hover-border-bottom-color: $tnn-secondary;
 $navbar-burger-color: $primary;
 
 $button-color: $dark;
@@ -45,14 +46,15 @@ $button-text-color: $dark;
 $button-focus-border-color: white;
 
 $button-background-color: $primary;
-$button-hover-color: $secondary;
+$button-hover-color: $tnn-secondary;
 $button-border-width: 1px;
 $button-border-color: $primary;
-$button-hover-border-color:  hsl(35,100,50);
-$button-focus-border-color: $secondary;
+$button-hover-border-color:  $tnn-secondary;
+$button-focus-border-color: $tnn-secondary;
 
 @import "~bulma/bulma.sass";
 @import "./helpers.scss";
+@import "./media-queries.css";
 
 .button.is-primary {
   color: $dark;
@@ -68,20 +70,16 @@ $button-focus-border-color: $secondary;
   padding: 8px;
   font-size: 1rem;
   line-height: 1;
-  color: $secondary;
+  color: $tnn-secondary;
   .column {
     padding: 0;
   }
 }
 .navbar {
-  max-width: 1180px;
+  background: transparent;
   &.is-fixed-top {
     margin: auto;
   }
-}
-.navbar-brand {
-  padding-top: 1rem;
-  padding-left: 1rem;
 }
 .force-navbar-center {
   flex-grow: 1; justify-content: center;

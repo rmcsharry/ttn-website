@@ -3,43 +3,7 @@ import { Link } from 'gatsby'
 import styles from './navigation.module.css'
 
 export default () => (
-  // <nav role="navigation">
-  //   <ul className={styles.navigation}>
-  //     <li className={styles.navigationItem}>
-  //       <Link to="/">Home</Link>
-  //     </li>
-  //     <li className={styles.navigationItem}>
-  //       <Link to="/blog/">Blog</Link>
-  //     </li>
-  //   </ul>
-  // </nav>
-
-  
-  <section class="hero is-fullheight">
-
-    {/* <div class="hero-head">  
-      <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-        <div class="column left">
-        <figure className={styles.logo}>
-          <img src="logo.png"></img>
-        </figure>
-        </div>
-        <div class="column center desktop">
-          <p class="navbar-item">BLOCKCHAIN</p>
-          <p class="navbar-item">THORIUM</p>
-          <p class="navbar-item">ABOUT</p>          
-          <p class="navbar-item">TEAM</p>
-          <p class="navbar-item">BLOG</p>
-        </div>
-        <div class="column right">
-          <p class="navbar-item desktop">REGISTER </p>
-          <p class="navbar-item">HAMBURGER</p>
-        </div>
-      </div>
-    </div> */}
-
-
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="logo" href="https://www.thethoriumnnetwork.com">
         <img
@@ -93,5 +57,4 @@ export default () => (
       </div>
     </div>
 </nav>
-</section>
 )
