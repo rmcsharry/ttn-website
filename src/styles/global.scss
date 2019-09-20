@@ -19,7 +19,8 @@ body {
 // set bulma variables here before importing Bulma
 // Set your brand colors
 $orange: hsl(35, 100%, 50%);
-$wheat: #f5deb3;
+$secondary: #f5deb3;
+
 
 $dark: #65440f;
 // Update Bulma's global variables
@@ -35,8 +36,8 @@ $family-sans-serif: "Nunito", sans-serif;
 $body-background-color: black;
 
 $navbar-item-color: $primary;
-$navbar-item-hover-color: $wheat;
-$navbar-tab-hover-border-bottom-color: $wheat;
+$navbar-item-hover-color: $secondary;
+$navbar-tab-hover-border-bottom-color: $secondary;
 $navbar-burger-color: $primary;
 
 $button-color: $dark;
@@ -44,11 +45,11 @@ $button-text-color: $dark;
 $button-focus-border-color: white;
 
 $button-background-color: $primary;
-$button-hover-color: $wheat;
+$button-hover-color: $secondary;
 $button-border-width: 1px;
 $button-border-color: $primary;
 $button-hover-border-color:  hsl(35,100,50);
-$button-focus-border-color: $wheat;
+$button-focus-border-color: $secondary;
 
 @import "~bulma/bulma.sass";
 @import "./helpers.scss";
@@ -56,7 +57,6 @@ $button-focus-border-color: $wheat;
 .button.is-primary {
   color: $dark;
 }
-
 .button.is-small {
   border-radius: 0;
 }
@@ -68,7 +68,7 @@ $button-focus-border-color: $wheat;
   padding: 8px;
   font-size: 1rem;
   line-height: 1;
-  color: $wheat;
+  color: $secondary;
   .column {
     padding: 0;
   }
