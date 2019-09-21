@@ -20,7 +20,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "sharp": "^0.22.0"
+    "sharp": "^0.22.0",
+    "typeface-libre-baskerville": "0.0.72",
+    "typeface-libre-franklin": "0.0.75"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

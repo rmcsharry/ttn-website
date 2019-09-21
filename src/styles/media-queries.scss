@@ -1,0 +1,43 @@
+@import "./colors.scss";
+
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+  .navbar.is-spaced {
+      padding: 0.5rem 0.5rem;
+  }
+  .main-container {
+    padding-top: 10px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1230px) {
+  .navbar.is-spaced {
+    padding: 1rem 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-container {
+    padding-top: 100px;
+  }  
+}
+// the below query customizes the mobile nav menu
+@media screen and (max-width: 1023px) {
+  .navbar.is-fixed-top .navbar-menu, .navbar.is-fixed-top-touch .navbar-menu {
+    background-color: hsla(0, 0, 0, 0.5);
+    padding: 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100vh;
+    .navbar-end {
+      display: none;
+    }
+    a.navbar-item {
+      color: $ttn-gold;
+      border-bottom: 1px solid gray;
+      min-height: 1rem;
+      font-size: 1rem;
+    }
+    .center {
+      justify-content: flex-start;
+    }
+  }
+}

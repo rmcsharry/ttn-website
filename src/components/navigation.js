@@ -11,8 +11,8 @@ export default () => (
           alt="The Thoriumn Network logo"
           class="logo"
         />
-        </a>
-        <div class="brandname columns is-marginless center-column top is-lowercase">
+      </a>
+      <div class="brandname columns is-marginless center-column top is-lowercase">
           <div class="column">
             <span>the</span>
           </div>
@@ -23,8 +23,6 @@ export default () => (
             <span>network</span>
           </div>
         </div>
-      
-
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -33,28 +31,17 @@ export default () => (
     </div>
     <div class="navbar-menu">
       <div class="navbar-start force-navbar-center">
-        <div class="center">
-          <a class="navbar-item is-tab">BLOCKCHAIN</a>    
-        </div>
-        <div class="center">
-          <a class="navbar-item is-tab">THORIUM</a>    
-          </div>
-        <div class="center">
-          <a class="navbar-item is-tab">ABOUT</a>
-        </div>
-        <div class="center">
-          <a class="navbar-item is-tab">TEAM</a>
-        </div>
-        <div class="center">
-          <a class="navbar-item is-tab">BLOG</a>
-        </div>
+        <a class="navbar-item is-tab">BLOCKCHAIN</a>    
+        <a class="navbar-item is-tab">THORIUM</a>    
+        <a class="navbar-item is-tab">ABOUT</a>
+        <a class="navbar-item is-tab">TEAM</a>
+        <a class="navbar-item is-tab">BLOG</a>
       </div>
       <div class="navbar-end">
-        <div class="center">
-            <button class="button is-small has-text-weight-bold">
-              <div class="">REGISTER</div></button>
-        </div>
+        <button class="button is-outlined is-primary has-text-weight-bold">
+          <div class="">REGISTER</div>
+        </button>
       </div>
     </div>
-</nav>
+  </nav>
 )

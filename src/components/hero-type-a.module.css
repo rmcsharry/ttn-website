@@ -1,0 +1,9 @@
+
+.heroImage {
+  /*
+    Ensure golden ratio for the hero size while limiting it to some extend to
+    the viewport width
+  */
+  min-height: 62vh;
+  max-height: 72vh;
+}

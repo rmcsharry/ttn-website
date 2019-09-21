@@ -1,64 +1,55 @@
 @charset "utf-8";
 // @import "./debug.css";
 
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
-
-body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin: 0;
-}
-
 // set bulma variables here before importing Bulma
-// Set your brand colors
-$orange: hsl(35, 100%, 50%);
-$tnn-primary: hsl(203, 89%, 53%);
-$tnn-secondary: #f5deb3;
+// set brand colors
+@import "./colors.scss";
 
+$family-sans-serif: "Libre Franklin", Tahoma, Arial, Helvetica, sans-serif;
 
-$dark: #65440f;
-// Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-
-$primary: $tnn-primary;
-$link: $orange;
-$link-hover: white;
+$primary: $ttn-sky-blue;
+$link: $ttn-gold;
+$link-hover: $ttn-gold;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
-$family-sans-serif: "Nunito", sans-serif;
 $body-background-color: black;
 
-$navbar-item-color: $primary;
-$navbar-item-hover-color: $tnn-secondary;
-$navbar-tab-hover-border-bottom-color: $tnn-secondary;
-$navbar-burger-color: $primary;
+$navbar-item-color: $ttn-gold;
+$navbar-item-hover-color: $ttn-gold;
+$navbar-tab-hover-border-bottom-color: $ttn-gold;
+$navbar-burger-color: $ttn-sky-blue;
 
 $button-color: $dark;
 $button-text-color: $dark;
 $button-focus-border-color: white;
 
-$button-background-color: $primary;
-$button-hover-color: $tnn-secondary;
-$button-border-width: 1px;
-$button-border-color: $primary;
-$button-hover-border-color:  $tnn-secondary;
-$button-focus-border-color: $tnn-secondary;
+// $button-background-color: $ttn-gold;
+$button-hover-color: black;
+// $button-border-width: 1px;
+// $button-border-color: $ttn-sky-blue;
+// $button-hover-border-color:  $ttn-gold;
+// $button-focus-border-color: $ttn-gold;
 
 @import "~bulma/bulma.sass";
 @import "./helpers.scss";
-@import "./media-queries.css";
+@import "./media-queries.scss";
 
-.button.is-primary {
-  color: $dark;
+.button.is-primary.is-outlined:hover {
+  color: black;
 }
+.button.is-primary.is-outlined:focus {
+  color: black;
+  border-color: $ttn-gold;
+}
+// .button.is-primary {
+//   color: $dark;
+// }
+// .button {
+//   &:hover {
+//     background: $black;
+//   }
+// }
 .button.is-small {
   border-radius: 0;
 }
@@ -70,7 +61,7 @@ $button-focus-border-color: $tnn-secondary;
   padding: 8px;
   font-size: 1rem;
   line-height: 1;
-  color: $tnn-secondary;
+  color: $ttn-gold;
   .column {
     padding: 0;
   }
@@ -81,13 +72,9 @@ $button-focus-border-color: $tnn-secondary;
     margin: auto;
   }
 }
+.navbar-item {
+  font-weight: 600;
+}
 .force-navbar-center {
   flex-grow: 1; justify-content: center;
 }
-
-// c97400 - on hover
-
-// background: #d2c4a8;
-// border: 1px solid black;
-// color: #8c7a33;
-// font-weight: 700;
