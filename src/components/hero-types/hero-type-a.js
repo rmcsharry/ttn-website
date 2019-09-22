@@ -15,23 +15,24 @@ const HeroTypeA = props => {
   
     // const hero = get(this, 'props.data.contentfulHeroTypeA')
 
-    return (
-      <section>
-      <pre> {JSON.stringify(props, null, 2)} </pre>
-      
-        <div className="columns">
-          <div className="column">
-            {/* <Img className={styles.heroImage} alt={data.name} fluid={data.heroImage.fluid} /> */}
-          </div>
-          <div className="column center">
-            {/* {console.log(hero)} */}
-            {/* {data.childContentfulHeroTypeATitleRichTextNode.content.content.value} */}
-          </div>
+  return (
+    <section>
+      <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />  
+      <div className="columns no-padding no-margin">
+        <div className="column">
         </div>
-      </section>
-    )
-  }
-// }
+        <div className="column is-half">
+          
+        </div>
+        <div className="column center">
+          {/* {console.log(hero)} */}
+          {/* {data.childContentfulHeroTypeATitleRichTextNode.content.content.value} */}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 
 HeroTypeA.propTypes = {
   id: PropTypes.string.isRequired,

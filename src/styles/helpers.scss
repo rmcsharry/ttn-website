@@ -16,7 +16,12 @@
 .single-spaced, .single-spaced * {
   line-height: 1;
 }
-
+.columns.no-padding > div.column {
+  padding: 0;
+}
+.columns.no-margin {
+  margin: 0;
+}
 @media (max-width: 1024px) {
 	.desktop {
 		display: none;

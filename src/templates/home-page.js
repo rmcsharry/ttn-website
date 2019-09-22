@@ -15,13 +15,12 @@ class homePageTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} >
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <div>
-            {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' &&
-              <HeroTypeA {...heroTypeAData}/>}
-          </div>
-        </div>
+        <Helmet title={siteTitle} />
+        {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' &&
+          <HeroTypeA {...heroTypeAData} />}
+        <section>
+          next section
+        </section>
       </Layout>
     )
   }
@@ -58,8 +57,9 @@ query heroTypeAByIdQuery($id: String!, $heroId: String!) {
         nodeType
       }
     }
+    heroImageAltText
     heroImage {
-      fluid(maxWidth: 1180, background: "rgb:000000") {
+      fluid(maxWidth: 800, resizingBehavior: SCALE, background: "rgb:040404") {
         ...GatsbyContentfulFluid_tracedSVG
       }
     }
