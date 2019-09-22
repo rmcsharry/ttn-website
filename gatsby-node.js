@@ -41,52 +41,40 @@ const path = require('path')
 //   })
 // }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
+  const homePageTemplate = path.resolve('./src/templates/home-page.js')
 
-  return new Promise((resolve, reject) => {
-    const homePageTemplate = path.resolve('./src/templates/home-page.js')
-    resolve(
-      graphql(
-        `
-          {
-            allContentfulHomePage {
-              edges {
-                node {
-                  id
-                  pageTitle
-                  pageHero {
-                    id
-                    internal {
-                      type
-                    }
-                  }
-                  pageSections {
-                    id
-                  }
-                }
-              }      
+  const result = await graphql(`
+    query {
+      allContentfulHomePage {
+        edges {
+          node {
+            id
+            pageTitle
+            pageHero {
+              id
+              internal {
+                type
+              }
+            }
+            pageSections {
+              id
             }
           }
-          `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
-        }
+        }      
+      }
+    }
+    `)
 
-        const pages = result.data.allContentfulHomePage.edges
-        pages.forEach((page, index) => {
-          createPage({
-            path: `/home`,
-            component: homePageTemplate,
-            context: {
-              id: page.node.id,
-              heroId: page.node.pageHero.id
-            },
-          })
-        })
+    result.data.allContentfulHomePage.edges.forEach((page, index) => {
+      createPage({
+        path: `/home`,
+        component: homePageTemplate,
+        context: {
+          id: page.node.id,
+          heroId: page.node.pageHero.id
+        },
       })
-    )
-  })
+    })
 }
