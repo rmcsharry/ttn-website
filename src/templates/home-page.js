@@ -3,19 +3,26 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
+import Layout from '../components/layout.js'
 import HeroTypeA from '../components/hero-types/hero-type-a.js'
 
 class homePageTemplate extends React.Component {
   render() {
-    const pageData = get(this.props, 'data.contentfulHomePage')
-    const heroTypeAData = get(this.props, 'data.contentfulHeroTypeA')
+    const siteTitle = get(this.props.data, 'site.siteMetadata.title')
+    const pageData = get(this.props.data, 'contentfulHomePage')
+    const heroTypeAData = get(this.props.data, 'contentfulHeroTypeA')
     console.log(pageData);
 
     return (
-      <div>
-        {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' &&
-          <HeroTypeA {...heroTypeAData}/>}
-      </div>
+      <Layout location={this.props.location} >
+        <div style={{ background: '#fff' }}>
+          <Helmet title={siteTitle} />
+          <div>
+            {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' &&
+              <HeroTypeA {...heroTypeAData}/>}
+          </div>
+        </div>
+      </Layout>
     )
   }
 }

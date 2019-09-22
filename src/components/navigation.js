@@ -5,9 +5,9 @@ import styles from './navigation.module.css'
 export default () => (
   <nav class="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="logo" href="https://www.thethoriumnnetwork.com">
+      <a class="logo" href="https://www.thethoriumnetwork.com">
         <img
-          src="logo.png"
+          src="../logo.png"
           alt="The Thoriumn Network logo"
           class="logo"
         />
