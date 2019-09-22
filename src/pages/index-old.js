@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import HeroTypeA from '../components/hero-type-a'
+import HeroTypeA from '../components/hero-types/hero-type-a'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 

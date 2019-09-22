@@ -1,6 +1,12 @@
 @charset "utf-8";
 // @import "./debug.css";
 
+
+// NOTE on using Bulma for typography
+// Use the h1, h2 etc. tags to indicate the importance of the headline (not the styling).
+// Use .title, .subtitle where appropriate for styling, accompanied by the typography helpers such as .is-size-1.
+// In fields where content editors post content of indeterminate tags, use the .content class on a wrapping element to get default styling of h1 etc.
+
 // set bulma variables here before importing Bulma
 // set brand colors
 @import "./colors.scss";
