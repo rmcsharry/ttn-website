@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
     const [homePage] = get(this, 'props.data.allContentfulHomePage.edges')
 
     return (
-      <Layout location={this.props.location} >
+      <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
 
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
@@ -78,12 +78,7 @@ export const pageQuery = graphql`
           }
           title
           heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
+            fluid(maxWidth: 1180, maxHeight: 480, resizingBehavior: PAD, background: "rgb:000000") {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
@@ -105,7 +100,7 @@ export const pageQuery = graphql`
             id
           }
         }
-      }      
-    }   
+      }
+    }
   }
 `

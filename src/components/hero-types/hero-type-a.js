@@ -1,43 +1,64 @@
 import React from 'react'
 
-import get from 'lodash/get'
-import PropTypes from "prop-types";
 import Img from 'gatsby-image'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
- 
-import styles from './hero-type-a.module.css'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+
+import styles from './hero-type-a.module.scss'
 
 const HeroTypeA = props => {
-  // render() {
-  
-  
   // const { contentfulHeroTypeA: page } = data;
-  
-    // const hero = get(this, 'props.data.contentfulHeroTypeA')
+
+  // const hero = get(this, 'props.data.contentfulHeroTypeA')
+
+  let style1 = { '--animation-order': 1 }
+  let style2 = { '--animation-order': 2 }
+  let style3 = { '--animation-order': 3 }
+  let style4 = { '--animation-order': 4 }
+  let style5 = { '--animation-order': 5 }
+  let style6 = { '--animation-order': 6 }
 
   return (
     <section>
-      <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />  
-      <div className="columns no-padding no-margin">
-        <div className="column">
-        </div>
-        <div className="column is-half">
-          
-        </div>
-        <div className="column center">
-          {/* {console.log(hero)} */}
-          {/* {data.childContentfulHeroTypeATitleRichTextNode.content.content.value} */}
+      <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
+
+      <div className={styles.heroTitle}>
+        <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
+          <li style={style1}>Why you lookin' at me?</li>
+        </ul>
+      </div>
+      <div className={styles.heroSubTitle}>
+        <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
+          <li style={style6}>
+            ...so how much <em>energy</em> will <em>you</em> burn?
+          </li>
+        </ul>
+      </div>
+
+      <div className={styles.heroFooter}>
+        <h6 className="center is-size-7-mobile">The amount of fuel needed to power your life</h6>
+        <div className="columns center no-margin is-size-7-mobile is-size-5-desktop">
+          <div
+            className="column"
+            dangerouslySetInnerHTML={{
+              __html: documentToHtmlString(props.textA),
+            }}
+          ></div>
+          <div
+            className="column"
+            dangerouslySetInnerHTML={{
+              __html: documentToHtmlString(props.textB),
+            }}
+          ></div>
+          <div
+            className="column"
+            dangerouslySetInnerHTML={{
+              __html: documentToHtmlString(props.textC),
+            }}
+          ></div>
         </div>
       </div>
     </section>
   )
 }
 
-
-HeroTypeA.propTypes = {
-  id: PropTypes.string.isRequired,
-  data: PropTypes.object.isRequired,
-};
-
 export default HeroTypeA
-
