@@ -1,9 +1,10 @@
+@import "../../styles/colors.scss";
+
 ul {
   padding: 0;
   display: block;
   
 }
-
 li {
   width: 30vw;
   display: block;
@@ -14,11 +15,9 @@ li {
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
 }
-
 li + li {
   margin-top: 16px;
 }
-
 @keyframes animateIn {
   0% {
     opacity: 0;
@@ -29,8 +28,6 @@ li + li {
     opacity: 1;
   }
 }
-
-
 
 .heroImage {
   /*
@@ -43,7 +40,6 @@ li + li {
   margin: auto;
   max-width: 666px;
 }
-
 .heroTitle {
   position: absolute;
   top: calc(80vh / 2);
@@ -60,24 +56,18 @@ li + li {
   background-color: hsla(252, 45%, 2%, 0.5);
   border: 1px solid black;
 }
-.heroFooter {
-  clear: both;
-  position: relative;
-  padding-top: 2rem;
-  margin: auto;
-  width: 100%;
-  max-width:600px;
-  font-weight: 900;
-}
-.columns.center.no-margin > .column:not(:last-child) {
-  border-right: solid 2px white;
-}
-.column h3 h6 {
+.heroCTA{
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: absolute;
+  margin: auot;
+  left: 0;
+  right: 0;
+  bottom: 3rem;
+  > button {
+    box-shadow: 0px 0px 12px 7px $ttn-gold;  
+  }
 }
-
 /* iPad Pro 12.9" */
 @media only screen and (min-width: 1668px) and (-webkit-min-device-pixel-ratio: 1.5),
 (height: 2388px) and (width: 1688px) and (orientation: portrait)  {

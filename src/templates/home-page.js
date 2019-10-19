@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Layout from '../components/layout.js'
 import HeroTypeA from '../components/hero-types/hero-type-a.js'
+import BarChart from '../components/charts/bar-chart.js'
 
 class homePageTemplate extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class homePageTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
         {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroTypeAData} />}
+        <BarChart data={pageData.barChart} />
         <section>next section</section>
       </Layout>
     )
@@ -39,6 +41,13 @@ export const pageQuery = graphql`
           type
         }
       }
+      barChart {
+        chartData {
+          dataPointNames
+          dataPointValues
+        }
+        chartTitle
+      }
       pageSections {
         id
       }
@@ -49,6 +58,9 @@ export const pageQuery = graphql`
         content {
           nodeType
           content {
+            marks {
+              type
+            }
             nodeType
             value
           }
@@ -59,6 +71,9 @@ export const pageQuery = graphql`
         content {
           nodeType
           content {
+            marks {
+              type
+            }
             nodeType
             value
           }

@@ -11,10 +11,12 @@
 // set brand colors
 @import "./colors.scss";
 
-$family-sans-serif: "Libre Franklin", Tahoma, Arial, Helvetica, sans-serif;
+$family-primary: "Libre Franklin", Tahoma, Arial, Helvetica, sans-serif;
+$family-secondary: "Libre Baskerville", Tahoma, Arial, Helvetica, sans-serif;
 
 $primary: $ttn-sky-blue;
 $link: $ttn-gold;
+$danger: $ttn-red;
 $link-hover: $ttn-gold;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
@@ -85,4 +87,7 @@ $button-border-color: $ttn-gold;
 }
 .force-navbar-center {
   flex-grow: 1; justify-content: center;
+}
+.navbar.is-spaced a.navbar-item, .navbar.is-spaced .navbar-link {
+  border-radius: 0;
 }

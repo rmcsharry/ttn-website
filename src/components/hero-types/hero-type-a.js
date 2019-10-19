@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Img from 'gatsby-image'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
@@ -18,46 +17,59 @@ const HeroTypeA = props => {
   let style6 = { '--animation-order': 6 }
 
   return (
-    <section>
-      <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
+    <div>
+      <section>
+        <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
 
-      <div className={styles.heroTitle}>
-        <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
-          <li style={style1}>Why you lookin' at me?</li>
-        </ul>
-      </div>
-      <div className={styles.heroSubTitle}>
-        <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
-          <li style={style6}>
-            ...so how much <em>energy</em> will <em>you</em> burn?
-          </li>
-        </ul>
-      </div>
-
-      <div className={styles.heroFooter}>
-        <h6 className="center is-size-7-mobile">The amount of fuel needed to power your life</h6>
-        <div className="columns center no-margin is-size-7-mobile is-size-5-desktop">
-          <div
-            className="column"
-            dangerouslySetInnerHTML={{
-              __html: documentToHtmlString(props.textA),
-            }}
-          ></div>
-          <div
-            className="column"
-            dangerouslySetInnerHTML={{
-              __html: documentToHtmlString(props.textB),
-            }}
-          ></div>
-          <div
-            className="column"
-            dangerouslySetInnerHTML={{
-              __html: documentToHtmlString(props.textC),
-            }}
-          ></div>
+        <div className={styles.heroTitle}>
+          <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
+            <li style={style1} dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(props.title),
+              }}>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+        <div className={styles.heroSubTitle}>
+          <ul className="is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
+            <li style={style6} dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(props.subTitle),
+              }}>
+            </li>
+          </ul>
+        </div>
+        {/* CTA button */}
+        <div className={styles.heroCTA}>
+          <button className="button is-danger has-text-weight-bold"> 
+            REGISTER YOUR INTEREST
+          </button>
+        </div>
+      </section>
+      <section className={styles.heroFooterSection}>
+        <div className={styles.heroFooter}>
+          <h6 className="center is-size-7-mobile">The amount of fuel needed to power your life</h6>
+          <div className="columns center no-margin is-size-7-mobile is-size-5-desktop">
+            <div
+              className={styles.columnText}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(props.textA),
+              }}
+            ></div>
+            <div
+              className={styles.columnText}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(props.textB),
+              }}
+            ></div>
+            <div
+              className={styles.columnText}
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(props.textC),
+              }}
+            ></div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
