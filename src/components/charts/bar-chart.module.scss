@@ -3,6 +3,7 @@
 .chartSection {
   background: white;
   color: black;
+  min-height: 200px;
 }
 .columnText {
   display: flex;
@@ -16,8 +17,9 @@
 .columns.center.no-margin > .column:not(:last-child) {
   border-right: solid 2px white;
 }
-.column h3 h6 {
+h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }

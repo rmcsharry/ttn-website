@@ -1,11 +1,10 @@
 @import "../../styles/colors.scss";
 
-ul {
+.title_text {
   padding: 0;
   display: block;
-  
 }
-li {
+.title_text li {
   width: 30vw;
   display: block;
   padding: 5px;
@@ -15,9 +14,7 @@ li {
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
 }
-li + li {
-  margin-top: 16px;
-}
+
 @keyframes animateIn {
   0% {
     opacity: 0;
@@ -40,7 +37,7 @@ li + li {
   margin: auto;
   max-width: 666px;
 }
-.heroTitle {
+.hero_title {
   position: absolute;
   top: calc(80vh / 2);
   left: 7vw;

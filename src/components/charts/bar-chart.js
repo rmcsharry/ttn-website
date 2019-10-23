@@ -14,11 +14,13 @@ const BarChart = props => {
   return (
     <section className={styles.chartSection}>
       <div className={styles.heroFooter}>
-        <h6 className="center is-size-7-mobile">{props.data.chartTitle}</h6>
+        <h6 className="center is-size-6-mobile is-size-4-desktop is-family-secondary has-text-weight-bold">
+          {props.data.chartTitle}
+        </h6>
         <div className="columns center no-margin is-size-7-mobile is-size-5-desktop">
           {namesList}
         </div>
-        <div className="columns center no-margin is-size-7-mobile is-size-5-desktop has-text-weight-bold">
+        <div className="columns center no-margin is-size-7-mobile is-size-6-desktop has-text-weight-bold">
           {valuesList}
         </div>
       </div>

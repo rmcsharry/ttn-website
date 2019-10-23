@@ -73,7 +73,8 @@ exports.createPages = async ({ graphql, actions }) => {
         component: homePageTemplate,
         context: {
           id: page.node.id,
-          heroId: page.node.pageHero.id
+          heroId: page.node.pageHero.id,
+          sectionIds: page.node.pageSections
         },
       })
     })

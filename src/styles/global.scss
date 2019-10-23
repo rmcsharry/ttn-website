@@ -11,6 +11,7 @@
 // set brand colors
 @import "./colors.scss";
 
+
 $family-primary: "Libre Franklin", Tahoma, Arial, Helvetica, sans-serif;
 $family-secondary: "Libre Baskerville", Tahoma, Arial, Helvetica, sans-serif;
 
@@ -41,9 +42,24 @@ $button-border-color: $ttn-gold;
 // $button-hover-border-color:  $ttn-gold;
 // $button-focus-border-color: $ttn-gold;
 
+.content blockquote {
+  background-color: hsl(45, 22%, 64%) !important;
+  border-left: 5px solid $ttn-gold !important;
+  padding: 1.25em 1.5em !important;
+  color: black;
+}
+.container {
+  padding: 1.5rem;
+}
+.columns {
+  margin-top: -0.25rem !important;
+}
+
+
 @import "~bulma/bulma.sass";
 @import "./helpers.scss";
 @import "./media-queries.scss";
+@import "./typography.scss";
 
 .button.is-primary.is-outlined:hover {
   color: black;

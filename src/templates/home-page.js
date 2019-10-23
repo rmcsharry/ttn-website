@@ -5,12 +5,17 @@ import get from 'lodash/get'
 import Layout from '../components/layout.js'
 import HeroTypeA from '../components/hero-types/hero-type-a.js'
 import BarChart from '../components/charts/bar-chart.js'
+import LayoutSection from '../components/layout-section/layout-section.js'
 
 class homePageTemplate extends React.Component {
   render() {
     const siteTitle = get(this.props.data, 'site.siteMetadata.title')
     const pageData = get(this.props.data, 'contentfulHomePage')
     const heroTypeAData = get(this.props.data, 'contentfulHeroTypeA')
+    let sectionList = pageData.pageSections.map(function(section, index){
+      return <LayoutSection key={index} data={section} />;
+    })
+
     console.log(pageData)
 
     return (
@@ -19,6 +24,8 @@ class homePageTemplate extends React.Component {
         {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroTypeAData} />}
         <BarChart data={pageData.barChart} />
         <section>next section</section>
+        {sectionList}
+        {/* <LayoutSection data={pageData.pageSections} /> */}
       </Layout>
     )
   }
@@ -50,6 +57,17 @@ export const pageQuery = graphql`
       }
       pageSections {
         id
+        sectionBackgroundColor {
+          colorName
+        }
+        sectionName
+        sectionColumns {
+          columnName
+          columnType
+          childContentfulSectionColumnColumnContentRichTextNode {
+            json
+          }
+        }
       }
     }
     contentfulHeroTypeA(id: { eq: $heroId }) {
