@@ -10,7 +10,7 @@
   padding: 5px;
 }
 
-.heroImage {
+.hero_image {
   /*
     If you want to ensure golden ratio for the hero size while limiting it to some extend to
     the viewport width, use these settings:
@@ -29,7 +29,7 @@
   background-color: hsla(252, 45%, 2%, 0.5);
   border: 1px solid black;
 }
-.heroSubTitle {
+.hero_sub_title {
   position: absolute;
   bottom: calc(50vh / 2);
   right: 7vw;
@@ -37,7 +37,7 @@
   background-color: hsla(252, 45%, 2%, 0.5);
   border: 1px solid black;
 }
-.heroCTA{
+.hero_cta{
   display: flex;
   justify-content: center;
   position: absolute;
@@ -52,32 +52,32 @@
 /* iPad Pro 12.9" */
 @media only screen and (min-width: 1668px) and (-webkit-min-device-pixel-ratio: 1.5),
 (height: 2388px) and (width: 1688px) and (orientation: portrait)  {
-  .heroImage {
+  .hero_image {
     max-width: 1600px;
   }
 }
 @media only screen and (min-width: 2388px) and (-webkit-min-device-pixel-ratio: 1.5),
 (height: 1668px) and (width: 2388px) and (orientation: landscape) {
-  .heroImage {
+  .hero_image {
     max-width: 1200px;
   }
 }
 /* for normal iPad/tablets */
 @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5),
 (height: 1366px) and (width: 1024px) and (orientation: portrait) {
-  .heroImage {
+  .hero_image {
     max-width: 1200px;
   }
 }
 /* for stupidly wide screens of any dpi */
 @media only screen and (min-width: 2300px) and (-webkit-min-device-pixel-ratio: 1.0)
  {
-  .heroImage {
+  .hero_image {
     max-width: 1200px;
   }
 }
 @media only screen and (min-width: 1680px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape) {
-  .heroImage {
+  .hero_image {
     max-width: 1200px;
   }
 }

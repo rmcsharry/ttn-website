@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Layout from '../components/layout'
+import PageLayout from '../components/page-layout/page-layout'
 import HeroTypeA from '../components/hero-types/hero-type-a'
 import BarChart from '../components/charts/bar-chart'
 import LayoutSection from '../components/layout-section/layout-section'
@@ -22,7 +22,7 @@ class homePageTemplate extends React.Component {
     console.log(pageData)
 
     return (
-      <Layout location={this.props.location}>
+      <PageLayout location={this.props.location}>
         <Helmet title={siteTitle} />
         {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroTypeAData} />}
         <BarChart data={pageData.barChart} />
@@ -76,7 +76,7 @@ class homePageTemplate extends React.Component {
           </div>
         </section>
         <Partners />
-      </Layout>
+      </PageLayout>
     )
   }
 }

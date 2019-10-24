@@ -8,26 +8,26 @@ import styles from './hero-type-a.module.scss'
 const HeroTypeA = (props) => {
   return (
     <section>
-      <Img className={styles.heroImage} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
+      <Img className={styles.hero_image} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
 
       <div className={styles.hero_title}>
         <div className={`${styles.title_text} is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold`}>
-          <h2 dangerouslySetInnerHTML={{
+          <div dangerouslySetInnerHTML={{
               __html: documentToHtmlString(props.title),
             }}>
-          </h2>
+          </div>
         </div>
       </div>
-      <div className={styles.heroSubTitle}>
-        <div className="{styles.title_text} is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold">
-          <h2 dangerouslySetInnerHTML={{
+      <div className={styles.hero_sub_title}>
+        <div className={`${styles.title_text} is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold`}>
+          <div dangerouslySetInnerHTML={{
               __html: documentToHtmlString(props.subTitle),
             }}>
-          </h2>
+          </div>
         </div>
       </div>
       {/* CTA button */}
-      <div className={styles.heroCTA}>
+      <div className={styles.hero_cta}>
         <button className="button is-danger has-text-weight-bold"> 
           REGISTER YOUR INTEREST
         </button>
