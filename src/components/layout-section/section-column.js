@@ -6,17 +6,9 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import BlockQuote from "./blockquote";
 
-const Title3 = ({ children }) => <h3 className="is-3">{children}</h3>
-
-
 const richTextOptions = {
   renderNode: {
-    [BLOCKS.HEADING_3]: (node, children) => {
-      console.log('node', node)
-      return <Title3>{children}</Title3>
-    },
     [BLOCKS.QUOTE]: (node) => {
-      console.log(node)
       return <BlockQuote data={node}/>
     },
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -38,8 +30,8 @@ const richTextOptions = {
             href={file['en-US'].url}
             >{ title ? title['en-US'] : file['en-US'].details.fileName }
           </a>
-        default:
-          return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
+        // default:
+        //   return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
       }
     },
   }
@@ -56,10 +48,9 @@ const getColumnClasses = (columnType) => {
 }
 
 const SectionColumn = (props) => {
-  const column = props.data.column
-  const style = {color: `${props.data.color}`}
+  const column = props.data
   return (
-    <div className={getColumnClasses(column.columnType)} style={style}>
+    <div className={getColumnClasses(column.columnType)}>
       {documentToReactComponents(column.childContentfulSectionColumnColumnContentRichTextNode.json, richTextOptions)}
     </div>
   )

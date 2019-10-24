@@ -32,17 +32,13 @@ const LayoutSection = props => {
   console.log(getSectionStyle(props.data.sectionBackgroundColor.colorName))
   let columnCount = props.data.sectionColumns.length
   let columns = props.data.sectionColumns.map(function(column, index){
-    let props = {
-      column: column,
-      color: "red"
-    }
-    return <SectionColumn key={index} data={props} />;
+    return <SectionColumn key={index} data={column} />;
   })
 
   return (
     <section style={getSectionStyle(props.data.sectionBackgroundColor.colorName)}>
       <div class="container">
-        <div className={columnCount > 1 ? "columns": ""}>
+        <div className="columns">
           {columns}
         </div>
       </div>

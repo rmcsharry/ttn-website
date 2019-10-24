@@ -42,6 +42,7 @@ const HeroTypeA = props => {
           REGISTER YOUR INTEREST
         </button>
       </div>
+      <ScrollNotifier />
     </section>
   )
 }

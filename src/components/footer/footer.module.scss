@@ -1,0 +1,52 @@
+@import "../../styles/colors.scss";
+
+footer h6 {
+  color: $ttn-gold !important;
+}
+footer a {
+  width: 4rem;
+  height: 3rem;
+  margin-right: 1rem;
+  display: inline-block;
+  -webkit-transition: all .65s ease-in;
+  -moz-transition: all .65s ease-in;
+  transition: all .65s ease-in;
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+.instagram {
+  background: url(./social-instagram.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.facebook {
+  background: url(./social-facebook.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.telegram {
+  background: url(./social-telegram.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.twitter {
+  background: url(./social-twitter.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.linkedin {
+  background: url(./social-linkedin.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.youtube {
+  background: url(./social-youtube.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.reddit {
+  background: url(./social-reddit.svg) no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
