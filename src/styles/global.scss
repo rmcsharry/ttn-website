@@ -1,7 +1,6 @@
 @charset "utf-8";
 // @import "./debug.css";
 
-
 // NOTE on using Bulma for typography
 // Use the h1, h2 etc. tags to indicate the importance of the headline (not the styling).
 // Use .title, .subtitle where appropriate for styling, accompanied by the typography helpers such as .is-size-1.
@@ -51,9 +50,9 @@ $button-border-color: $ttn-gold;
 .container {
   padding: 1.5rem;
 }
-.columns {
-  margin-top: -0.25rem !important;
-}
+// .columns {
+//   margin-top: -0.25rem !important;
+// }
 
 
 @import "~bulma/bulma.sass";

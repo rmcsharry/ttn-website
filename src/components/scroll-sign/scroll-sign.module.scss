@@ -1,0 +1,31 @@
+@import "../../styles/colors.scss";
+
+.scroll_sign {
+  padding: 0;
+}
+.arrow_down {
+  position: relative;
+  bottom: 3%;
+  margin-top: -20px;
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cGF0aCBkPSJNMTAwIDUuNWMwIDEuMy0uNSAyLjYtMS41IDMuNUw1MCA1Ny41IDEuNSA5Yy0yLTItMi01LjEgMC03LjFzNS4xLTIgNy4xIDBMNTAgNDMuNCA5MS41IDEuOWMyLTIgNS4xLTIgNy4xIDAgLjkgMSAxLjQgMi4zIDEuNCAzLjZ6Ii8+PC9zdmc+");
+  background-size: contain;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

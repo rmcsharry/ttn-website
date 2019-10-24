@@ -1,12 +1,12 @@
 import React from 'react'
 
 import styles from './partners.module.scss'
-import meciLogo from './logo-meci-group.jpg'
+import meciLogo from './logo-meci-group.png'
 import bitcouchLogo from './logo-bitcouch.jpg'
 
 const Partners = () => {
   return (
-    <section style={{background: 'white', color: 'black'}}>
+    <section style={{background: 'white', color: 'black', borderTop: '1px, solid black'}}>
       <div className="container content">
         {/* <h3>Our Partners</h3> */}
         <div className="columns center">
