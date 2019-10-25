@@ -5,7 +5,7 @@ import styles from './scroll-sign.module.scss'
 
 const ScrollSign = () => {
   return (
-    <div className={`${styles.scroll_sign} container`}>
+    <div className={`${styles.scroll_sign} container desktop`}>
       <div className="columns desktop">
         <div className="column left desktop">
           <div className={styles.arrow_down + ' ' + styles.bounce}>

@@ -5,7 +5,7 @@
   display: block;
 }
 .title_text {
-  width: 30vw;
+  // width: 30vw;
   display: block;
   padding: 5px;
 }
@@ -31,7 +31,7 @@
 }
 .hero_sub_title {
   position: absolute;
-  bottom: calc(50vh / 2);
+  bottom: 15vh;
   right: 7vw;
   font-family: 'Libre Baskerville';
   background-color: hsla(252, 45%, 2%, 0.5);
@@ -44,7 +44,7 @@
   margin: auto;
   left: 0;
   right: 0;
-  bottom: 4rem;
+  bottom: 37vh;
   > button {
     box-shadow: 0px 0px 12px 7px $ttn-gold;  
   }

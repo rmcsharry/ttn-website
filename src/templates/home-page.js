@@ -10,7 +10,53 @@ import Partners from '../components/partners/partners'
 
 import styles from './home-page.module.scss'
 
+
 class homePageTemplate extends React.Component {
+  constructor() {
+    super();
+    this.oldScrollValue = 0,
+      this.state = {
+        setNavbarBackground: false
+      }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+      
+  handleScroll = e => {
+      // Get the new Value
+      let newValue = window.pageYOffset;
+  
+      //Subtract the two and conclude
+      if (this.oldScrollValue - newValue < 0) {
+          console.log("down", newValue)
+      } else if(this.oldScrollValue - newValue > 0){
+          console.log("up", newValue)
+      }
+  
+      // Update the old value
+      this.oldScrollValue = newValue;
+      if (this.oldScrollValue > (window.innerHeight * 0.4) && !this.state.setNavbarBackground) {
+        this.setState({setNavbarBackground: true})
+      }
+      if (this.oldScrollValue < (window.innerHeight * 0.4) && this.state.setNavbarBackground) {
+        this.setState({setNavbarBackground: false})
+      }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  // handleScroll = e => {
+  //   this.scrolledPixels++;
+  //   console.log(window.innerHeight)
+  //   if (this.scrolledPixels > (window.innerHeight * 0.08) && !this.state.setNavbarBackground) {
+  //     console.log('SCROLL***')
+  //     this.setState({setNavbarBackground: true})
+  //   }
+  // }
   render() {
     const siteTitle = get(this.props.data, 'site.siteMetadata.title')
     const pageData = get(this.props.data, 'contentfulHomePage')
@@ -22,14 +68,14 @@ class homePageTemplate extends React.Component {
     console.log(pageData)
 
     return (
-      <PageLayout location={this.props.location}>
+      <PageLayout location={this.props.location} setNavbarBackground={this.state.setNavbarBackground}>
         <Helmet title={siteTitle} />
         {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroTypeAData} />}
         <BarChart data={pageData.barChart} />
         {sectionList}
 
         <section>
-          <div class="container content">
+          <div className="container content">
             <h3>What about renewables?</h3>
             <p>Renewable energy is only part of the solution to the looming energy crisis. Here are two distinguished individuals who have done the research. The clips are very short and well worth watching.</p>
             <div className="columns center">
@@ -37,21 +83,21 @@ class homePageTemplate extends React.Component {
               <h6><a href="https://en.wikipedia.org/wiki/Bill_Gates">Bill Gates&nbsp;</a>on renewable energy</h6>
                 <iframe className={`${styles.vid_container} 16by9`}
                   src="https://www.youtube.com/embed/9xe3BWPsBTU"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                 </iframe>
               </div>
               <div className="column center-column ">
               <h6><a href="https://en.wikipedia.org/wiki/James_Hansen">Dr. James Hansen&nbsp;</a>on renewable energy</h6>
                 <iframe className={`${styles.vid_container} 16by9`}
                   src="https://www.youtube.com/embed/fmFo6XVm0Yk"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                 </iframe>
               </div>
             </div>
           </div>
         </section >
         <section style={{background: 'white', color: 'black'}}>
-          <div class="container content">
+          <div className="container content">
           <h3>A Blockchain to deliver Thorium</h3>
             <p>
               We are building the world’s first nuclear fuel delivery and management system based on blockchain technology.

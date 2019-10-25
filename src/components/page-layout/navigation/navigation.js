@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styles from './navigation.module.scss'
 
-export default () => (
-  <nav className="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
+const Navigation = (props) => {
+  return (
+    <nav className={`${props.data === true ? styles.bg_solid : styles.bg_trans} navbar is-fixed-top is-spaced" role = "navigation" aria - label="main navigation`}>
     <div className="navbar-brand">
       <a className="logo" href="https://www.thethoriumnetwork.com">
         <img src="../logo.png" alt="The Thoriumn Network logo" className="logo" />
@@ -38,5 +38,8 @@ export default () => (
         </button>
       </div>
     </div>
-  </nav>
-)
+    </nav>
+  )
+}
+
+export default Navigation

@@ -90,6 +90,7 @@ $button-border-color: $ttn-gold;
 }
 .navbar {
   background: transparent;
+  padding: 1rem;
   &.is-fixed-top {
     margin: auto;
   }

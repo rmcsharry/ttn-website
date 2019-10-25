@@ -37,7 +37,7 @@ const LayoutSection = props => {
 
   return (
     <section style={getSectionStyle(props.data.sectionBackgroundColor.colorName)}>
-      <div class="container">
+      <div className="container">
         <div className="columns">
           {columns}
         </div>

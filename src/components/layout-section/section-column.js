@@ -2,7 +2,6 @@ import React from 'react'
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 
 import styles from './section-column.module.scss'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import BlockQuote from "./blockquote";
 

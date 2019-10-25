@@ -1,2 +1,28 @@
 
 
+.bg_solid {
+  background: #000000cc;
+  transition: background-color 1s linear;
+}
+.bg_trans {
+  background: transparent;
+  transition: background-color 1s linear;
+}
+
+// .bg_solid {
+//   background: #000000;
+//   opacity: 0.8;
+//   animation-name: fadeInOpacity;
+//   animation-iteration-count: 1;
+//   animation-timing-function: ease-in;
+//   animation-duration: 2s;
+// }
+
+// @keyframes fadeInOpacity {
+// 0% {
+//   opacity: 0;
+// }
+// 100% {
+//   opacity: 1;
+// }
+// }

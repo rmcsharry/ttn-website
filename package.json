@@ -22,6 +22,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-typing-animation": "^1.6.2",
     "sharp": "^0.22.0",
     "typeface-libre-baskerville": "0.0.72",
     "typeface-libre-franklin": "0.0.75"
