@@ -26,13 +26,10 @@ const getSectionStyle = colorName => {
       };
   }
 }
-const LayoutSection = props => {
+const LayoutSection = (props) => {
   console.log(props, 'SECTION PROPS')
-  console.log(props.data.sectionBackgroundColor.colorName);
-  console.log(getSectionStyle(props.data.sectionBackgroundColor.colorName))
-  let columnCount = props.data.sectionColumns.length
-  let columns = props.data.sectionColumns.map(function(column, index){
-    return <SectionColumn key={index} data={column} />;
+  let columns = props.data.sectionColumns.map((column, index) => {
+    return <SectionColumn key={index} data={column} options={props.options}/>;
   })
 
   return (

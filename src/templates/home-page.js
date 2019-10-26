@@ -15,9 +15,9 @@ class homePageTemplate extends React.Component {
   constructor() {
     super();
     this.oldScrollValue = 0,
-      this.state = {
-        setNavbarBackground: false
-      }
+    this.state = {
+      setNavbarBackground: false
+    }
   }
 
   componentDidMount() {
@@ -25,42 +25,23 @@ class homePageTemplate extends React.Component {
   }
       
   handleScroll = e => {
-      // Get the new Value
-      let newValue = window.pageYOffset;
-  
-      //Subtract the two and conclude
-      if (this.oldScrollValue - newValue < 0) {
-          console.log("down", newValue)
-      } else if(this.oldScrollValue - newValue > 0){
-          console.log("up", newValue)
-      }
-  
-      // Update the old value
-      this.oldScrollValue = newValue;
-      if (this.oldScrollValue > (window.innerHeight * 0.4) && !this.state.setNavbarBackground) {
-        this.setState({setNavbarBackground: true})
-      }
-      if (this.oldScrollValue < (window.innerHeight * 0.4) && this.state.setNavbarBackground) {
-        this.setState({setNavbarBackground: false})
-      }
+    this.oldScrollValue = window.pageYOffset;
+    if (this.oldScrollValue > (window.innerHeight * 0.4) && !this.state.setNavbarBackground) {
+      this.setState({setNavbarBackground: true})
+    }
+    if (this.oldScrollValue < (window.innerHeight * 0.4) && this.state.setNavbarBackground) {
+      this.setState({setNavbarBackground: false})
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  // handleScroll = e => {
-  //   this.scrolledPixels++;
-  //   console.log(window.innerHeight)
-  //   if (this.scrolledPixels > (window.innerHeight * 0.08) && !this.state.setNavbarBackground) {
-  //     console.log('SCROLL***')
-  //     this.setState({setNavbarBackground: true})
-  //   }
-  // }
   render() {
     const siteTitle = get(this.props.data, 'site.siteMetadata.title')
     const pageData = get(this.props.data, 'contentfulHomePage')
-    const heroTypeAData = get(this.props.data, 'contentfulHeroTypeA')
+    const heroData = get(this.props.data, 'contentfulHeroTypeA')
     let sectionList = pageData.pageSections.map(function(section, index){
       return <LayoutSection key={index} data={section} />;
     })
@@ -70,7 +51,7 @@ class homePageTemplate extends React.Component {
     return (
       <PageLayout location={this.props.location} setNavbarBackground={this.state.setNavbarBackground}>
         <Helmet title={siteTitle} />
-        {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroTypeAData} />}
+        {pageData.pageHero.internal.type === 'ContentfulHeroTypeA' && <HeroTypeA {...heroData} />}
         <BarChart data={pageData.barChart} />
         {sectionList}
 
@@ -130,7 +111,7 @@ class homePageTemplate extends React.Component {
 export default homePageTemplate
 
 export const pageQuery = graphql`
-  query heroTypeAByIdQuery($id: String!, $heroId: String!) {
+  query homePageQuery($id: String!, $heroId: String!) {
     site {
       siteMetadata {
         title
@@ -181,45 +162,6 @@ export const pageQuery = graphql`
         }
       }
       subTitle {
-        nodeType
-        content {
-          nodeType
-          content {
-            marks {
-              type
-            }
-            nodeType
-            value
-          }
-        }
-      }
-      textA {
-        nodeType
-        content {
-          nodeType
-          content {
-            marks {
-              type
-            }
-            nodeType
-            value
-          }
-        }
-      }
-      textB {
-        nodeType
-        content {
-          nodeType
-          content {
-            marks {
-              type
-            }
-            nodeType
-            value
-          }
-        }
-      }
-      textC {
         nodeType
         content {
           nodeType

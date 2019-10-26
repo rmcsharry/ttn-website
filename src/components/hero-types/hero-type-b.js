@@ -3,13 +3,17 @@ import Img from 'gatsby-image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import ScrollSign from '../scroll-sign/scroll-sign'
-import styles from './hero-type-a.module.scss'
+import styles from './hero-type-b.module.scss'
 import Typing from 'react-typing-animation';
 
-const HeroTypeA = (props) => {
+const HeroTypeB = (props) => {
   return (
     <div>
-      <Img className={styles.hero_image} alt={props.heroImageAltText} fluid={props.heroImage.fluid} />
+      <Img
+        className={styles.hero_image}
+        alt={props.heroImageAltText}
+        fluid={props.heroImage.fluid}
+      />
 
       <div className={styles.hero_title}>
         <div className={`${styles.title_text} is-size-3-desktop is-size-4-tablet is-size-6-mobile has-text-weight-bold`}>
@@ -26,15 +30,9 @@ const HeroTypeA = (props) => {
           </Typing>
         </div>
       </div>
-      {/* CTA button */}
-      <div className={styles.hero_cta}>
-        <button className="button is-danger has-text-weight-bold">
-          REGISTER YOUR INTEREST
-      </button>
-      </div>
       <ScrollSign />
     </div>
   )
 }
 
-export default HeroTypeA
+export default HeroTypeB

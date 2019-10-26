@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "gatsby"
+
 import styles from './navigation.module.scss'
 
 const Navigation = (props) => {
@@ -27,15 +29,15 @@ const Navigation = (props) => {
     </div>
     <div className="navbar-menu">
       <div className="navbar-start force-navbar-center">
-        <a className="navbar-item is-tab">BLOCKCHAIN</a>
-        <a className="navbar-item is-tab">THORIUM</a>
-        <a className="navbar-item is-tab">ABOUT</a>
-        <a className="navbar-item is-tab">TEAM</a>
+        <Link partiallyActive={true} activeStyle={{ color: '#1ca0f2' }} className="navbar-item is-tab" to="/thorium/">THORIUM</Link>
+        <Link partiallyActive={true} activeStyle={{ color: '#1ca0f2' }} className="navbar-item is-tab" to="/blockchain/">BLOCKCHAIN</Link>
+        <Link partiallyActive={true} activeStyle={{ color: '#1ca0f2' }} className="navbar-item is-tab" to="/about/">ABOUT</Link>
+        <Link partiallyActive={true} activeStyle={{ color: '#1ca0f2' }} className="navbar-item is-tab" to="/team/">TEAM</Link>
       </div>
       <div className="navbar-end">
-        <button className="button is-outlined is-primary has-text-weight-bold">
-          <div className="">REGISTER</div>
-        </button>
+        
+        <div className=""></div>
+        
       </div>
     </div>
     </nav>

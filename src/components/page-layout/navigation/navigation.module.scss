@@ -8,7 +8,9 @@
   background: transparent;
   transition: background-color 1s linear;
 }
-
+.navbar_item_active {
+  border-bottom-color: #ffe699;
+}
 // .bg_solid {
 //   background: #000000;
 //   opacity: 0.8;

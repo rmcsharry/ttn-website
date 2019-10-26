@@ -44,6 +44,7 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const homePageTemplate = path.resolve('./src/templates/home-page.js')
+  const teamPageTemplate = path.resolve('./src/templates/team-page.js')
 
   const result = await graphql(`
     query {
@@ -62,20 +63,48 @@ exports.createPages = async ({ graphql, actions }) => {
               id
             }
           }
-        }      
+        }
+      }
+      allContentfulTeamPage {
+        edges {
+          node {
+            id
+            pageTitle
+            pageHero {
+              id
+              internal {
+                type
+              }
+            }
+            pageSections {
+              id
+            }
+          }
+        }
       }
     }
     `)
 
-    result.data.allContentfulHomePage.edges.forEach((page, index) => {
+    result.data.allContentfulHomePage.edges.forEach((edge, index) => {
       createPage({
         path: `/home`,
         component: homePageTemplate,
         context: {
-          id: page.node.id,
-          heroId: page.node.pageHero.id,
-          sectionIds: page.node.pageSections
+          id: edge.node.id,
+          heroId: edge.node.pageHero.id,
+          sectionIds: edge.node.pageSections
         },
       })
     })
+    result.data.allContentfulTeamPage.edges.forEach((edge, index) => {
+      createPage({
+        path: `/team`,
+        component: teamPageTemplate,
+        context: {
+          id: edge.node.id,
+          heroId: edge.node.pageHero.id,
+          sectionIds: edge.node.pageSections
+        },
+      })
+    })  
 }
